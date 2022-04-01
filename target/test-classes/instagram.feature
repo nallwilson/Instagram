@@ -10,7 +10,5 @@ Feature: Instagram Login, search account, message
     When user click direct message icon
     Then user should be on direct message page
 
-    When user click ronaldwilsonnn on list
-    And type "halo bos"
-    And click send
-    Then user should have sent "halo bos"
+    When message someone with "halo bos"
+    Then "halo bos" should have been sent
