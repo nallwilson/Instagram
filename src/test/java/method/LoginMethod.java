@@ -1,13 +1,13 @@
-package page;
+package method;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class LoginMethod {
     private final WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    public LoginMethod(WebDriver driver){
         this.driver = driver;
     }
     public void instagramPage() throws InterruptedException {
@@ -25,6 +25,18 @@ public class LoginPage {
     public void clickLogin() throws InterruptedException {
         WebElement loginButton = driver.findElement(By.xpath("//button[@type = \"submit\"]"));
         loginButton.click();
+        Thread.sleep(5000);
+    }
+    public void loginResult() throws InterruptedException {
+        String title = driver.getTitle();
+        String ig = "instagram";
+
+        if(title.equalsIgnoreCase(ig)){
+            System.out.println("you successfully logged in");
+        }
+        else {
+            System.out.println("login was not successful");
+        }
         Thread.sleep(5000);
     }
 }
