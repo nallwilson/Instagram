@@ -2,7 +2,6 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -15,11 +14,6 @@ public class Steps {
     @Before
     public void setup(){
         driver = Utility.getWebDriver();
-    }
-    @Given("user is on login page")
-    public void user_is_on_login_page() throws InterruptedException {
-        driver.get("https://www.instagram.com/");
-        Thread.sleep(5000);
     }
     @Then("user should be logged in successfully")
     public void user_should_be_logged_in_successfully() throws InterruptedException {

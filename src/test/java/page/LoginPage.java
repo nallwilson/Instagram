@@ -10,6 +10,10 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
+    public void instagramPage() throws InterruptedException {
+        driver.get("https://www.instagram.com/");
+        Thread.sleep(5000);
+    }
     public void fillUserName(String username){
         WebElement usernameWe = driver.findElement(By.xpath("//input[@name=\"username\"]"));
         usernameWe.sendKeys(username);
