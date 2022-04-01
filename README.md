@@ -1,4 +1,4 @@
-Hi, this project is for my learning purpose
+Hi, this project is for my learning purpose and 
 I'm currently learning how to use Selenium and Cucumber
 
 # Instagram
