@@ -1,21 +1,22 @@
-package method;
+package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MessageMethod {
+public class MessagePage {
     private final WebDriver driver;
 
-    public MessageMethod(WebDriver driver) {
+    public MessagePage(WebDriver driver) {
         this.driver = driver;
     }
     public void clickMessageIcon() throws InterruptedException {
         WebElement dm = driver.findElement(By.xpath("//a[@href = \"/direct/inbox/\"]"));
         dm.click();
         Thread.sleep(2000);
+
     }
-    public void messagePage(){
+    public void messagePageResult(){
         String url = driver.getCurrentUrl();
         String dmIcon = "https://www.instagram.com/direct/inbox/";
 

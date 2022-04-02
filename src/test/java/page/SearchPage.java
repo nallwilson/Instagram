@@ -1,13 +1,13 @@
-package method;
+package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class SearchMethod {
+public class SearchPage {
     private final WebDriver driver;
 
-    public SearchMethod(WebDriver driver) {
+    public SearchPage(WebDriver driver) {
         this.driver = driver;
     }
     public void fillSearch(String accountName) throws InterruptedException {

@@ -3,14 +3,14 @@ package steps;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import method.MessageMethod;
+import page.MessagePage;
 
 public class MessageSteps {
-    private MessageMethod message;
+    private MessagePage message;
 
     @Before
     public void init(){
-        message = new MessageMethod(Utility.getWebDriver());
+        message = new MessagePage(Utility.getWebDriver());
     }
     @When("user click direct message icon")
     public void the_user_click_direct_message_icon() throws InterruptedException {
@@ -18,7 +18,7 @@ public class MessageSteps {
     }
     @Then("user should be on direct message page")
     public void the_user_should_be_on_direct_message_page() {
-        message.messagePage();
+        message.messagePageResult();
     }
 
     @When("message someone with {string}")

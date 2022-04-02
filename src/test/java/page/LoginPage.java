@@ -1,13 +1,13 @@
-package method;
+package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginMethod {
+public class LoginPage {
     private final WebDriver driver;
 
-    public LoginMethod(WebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver = driver;
     }
     public void instagramPage() throws InterruptedException {

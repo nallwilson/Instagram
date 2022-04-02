@@ -3,15 +3,15 @@ package steps;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import method.SearchMethod;
+import page.SearchPage;
 
 
 public class SearchSteps {
-    private SearchMethod search;
+    private SearchPage search;
 
     @Before
     public void init(){
-        search = new SearchMethod(Utility.getWebDriver());
+        search = new SearchPage(Utility.getWebDriver());
     }
     @When("user enter {string} in search bar")
     public void user_enter_in_search_bar(String accountName) throws InterruptedException {
