@@ -15,5 +15,4 @@ public class Utility {
         }
         return driver;
     }
-
 }

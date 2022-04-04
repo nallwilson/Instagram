@@ -4,21 +4,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class SearchPage {
     private final WebDriver driver;
 
     public SearchPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void fillSearch(String accountName) throws InterruptedException {
+    public void fillSearch(String accountName) {
         WebElement searchbar = driver.findElement(By.xpath("//input[@type = \"text\"]"));
         searchbar.sendKeys(accountName);
-        Thread.sleep(2000);
+        delay();
     }
-    public void clickSearch() throws InterruptedException {
+    public void clickSearch() {
         WebElement searchIcon = driver.findElement(By.xpath("//a[@class = \"-qQT3\"]"));
         searchIcon.click();
-        Thread.sleep(5000);
+        load();
     }
     public void searchResult(String accountName){
         String url = driver.getCurrentUrl();
@@ -26,6 +28,20 @@ public class SearchPage {
 
         if(url.equalsIgnoreCase(fidela)){
             System.out.println("you are on "+accountName+"'s ig");
+        }
+    }
+    public void load() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException ex) {
+            //ToCatchOrNot
+        }
+    }
+    public void delay() {
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException ex) {
+            //ToCatchOrNot
         }
     }
 }

@@ -4,15 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginPage {
     private final WebDriver driver;
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
-    public void instagramPage() throws InterruptedException {
+    public void instagramPage() {
         driver.get("https://www.instagram.com/");
-        Thread.sleep(5000);
+        load();
     }
     public void fillUserName(String username){
         WebElement usernameWe = driver.findElement(By.xpath("//input[@name=\"username\"]"));
@@ -22,12 +24,12 @@ public class LoginPage {
         WebElement passwordWe = driver.findElement(By.xpath("//input[@name=\"password\"]"));
         passwordWe.sendKeys(password);
     }
-    public void clickLogin() throws InterruptedException {
+    public void clickLogin() {
         WebElement loginButton = driver.findElement(By.xpath("//button[@type = \"submit\"]"));
         loginButton.click();
-        Thread.sleep(5000);
+        load();
     }
-    public void loginResult() throws InterruptedException {
+    public void loginResult() {
         String title = driver.getTitle();
         String ig = "instagram";
 
@@ -37,6 +39,12 @@ public class LoginPage {
         else {
             System.out.println("login was not successful");
         }
-        Thread.sleep(5000);
+    }
+    public void load() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException ex) {
+            //ToCatchOrNot
+        }
     }
 }

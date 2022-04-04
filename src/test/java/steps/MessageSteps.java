@@ -13,7 +13,7 @@ public class MessageSteps {
         message = new MessagePage(Utility.getWebDriver());
     }
     @When("user click direct message icon")
-    public void the_user_click_direct_message_icon() throws InterruptedException {
+    public void the_user_click_direct_message_icon() {
         message.clickMessageIcon();
     }
     @Then("user should be on direct message page")
@@ -22,7 +22,7 @@ public class MessageSteps {
     }
 
     @When("message someone with {string}")
-    public void message_someone_with(String chat) throws InterruptedException {
+    public void message_someone_with(String chat) {
         message.chooseAccountToMessage();
         message.typingMessage(chat);
         message.clickSend();

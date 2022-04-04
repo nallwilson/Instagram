@@ -14,7 +14,7 @@ public class SearchSteps {
         search = new SearchPage(Utility.getWebDriver());
     }
     @When("user enter {string} in search bar")
-    public void user_enter_in_search_bar(String accountName) throws InterruptedException {
+    public void user_enter_in_search_bar(String accountName) {
         search.fillSearch(accountName);
         search.clickSearch();
     }
